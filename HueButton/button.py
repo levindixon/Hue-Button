@@ -35,31 +35,31 @@ while True:
     if toggleOneChanged:
         print "Toggle One"
         toggleOneLastState = GPIO.input(toggleOne)
-        os.system('node toggle.js 1')
+        os.system('node toggle.js 4')
     elif toggleTwoChanged:
         print "Toggle Two"
         toggleTwoLastState = GPIO.input(toggleTwo)
-        os.system('node toggle.js 2')
+        os.system('node toggle.js 3')
     elif toggleThreeChanged:
         print "Toggle Three"
         toggleThreeLastState = GPIO.input(toggleThree)
-        os.system('node toggle.js 3')
+        os.system('node toggle.js 5')
     elif toggleFourChanged:
         print "Toggle Four"
         toggleFourLastState = GPIO.input(toggleFour)
-        os.system('node toggle.js 4')
+        os.system('node toggle.js 6')
     elif toggleFiveChanged:
         print "Toggle Five"
         toggleFiveLastState = GPIO.input(toggleFive)
-        os.system('node toggle.js 5')
+        os.system('node toggle.js 7')
     elif toggleSixChanged:
         print "Toggle Six"
         toggleSixLastState = GPIO.input(toggleSix)
-        os.system('node toggle.js 6')
+        os.system('node toggle.js 2')
     elif toggleSevenChanged:
         print "Toggle Seven"
         toggleSevenLastState = GPIO.input(toggleSeven)
-        os.system('node toggle.js 7')
+        os.system('node toggle.js 1')
 
     time.sleep(0.01)
 
