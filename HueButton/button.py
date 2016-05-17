@@ -29,7 +29,7 @@ while True:
     toggleThreeChanged = GPIO.input(toggleThree) is not toggleThreeLastState
     toggleFourChanged = GPIO.input(toggleFour) is not toggleFourLastState
     toggleFiveChanged = GPIO.input(toggleFive) is not toggleFiveLastState
-    toggleSixChanged = GPIO.input(toggleSix) is not toggleSixLasteState
+    toggleSixChanged = GPIO.input(toggleSix) is not toggleSixLastState
     toggleSevenChanged = GPIO.input(toggleSeven) is not toggleSevenLastState
 
     if toggleOneChanged:
