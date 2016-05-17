@@ -2,25 +2,65 @@ import RPi.GPIO as GPIO
 import os
 import time
 
-inPin = 12
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(inPin, GPIO.IN)
+print "Running Hue Button"
 
-num_changed = 0;
-light_on = False;
-print "Running Python Script!"
+toggleOne = 29
+toggleTwo = 31
+toggleThree = 32
+toggleFour = 33
+toggleFive = 35
+toggleSix = 36
+toggleSeven = 37
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup([toggleOne, toggleTwo, toggleThree, toggleFour, toggleFive, toggleSix, toggleSeven], GPIO.IN)
+
+toggleOneLastState = GPIO.input(toggleOne)
+toggleTwoLastState = GPIO.input(toggleTwo)
+toggleThreeLastState = GPIO.input(toggleThree)
+toggleFourLastState = GPIO.input(toggleFour)
+toggleFiveLastState = GPIO.input(toggleFive)
+toggleSixLastState = GPIO.input(toggleSix)
+toggleSevenLastState = GPIO.input(toggleSeven)
 
 while True:
-    button_pressed = not GPIO.input(inPin)
-    if button_pressed and light_on:
-	light_on = False
-        print "Turning Lights Off"
-	os.system('node turnAllOff.js')
-	
-    elif button_pressed:
-	num_changed += 1
-	light_on = True
-        print "Turning Lights On. Pressed ", num_changed
-	os.system('node turnAllOn.js')
+    toggleOneChanged = GPIO.input(toggleOne) is not toggleOneLastState
+    toggleTwoChanged = GPIO.input(toggleTwo) is not toggleTwoLastState
+    toggleThreeChanged = GPIO.input(toggleThree) is not toggleThreeLastState
+    toggleFourChanged = GPIO.input(toggleFour) is not toggleFourLastState
+    toggleFiveChanged = GPIO.input(toggleFive) is not toggleFiveLastState
+    toggleSixChanged = GPIO.input(toggleSix) is not toggleSixLasteState
+    toggleSevenChanged = GPIO.input(toggleSeven) is not toggleSevenLastState
+
+    if toggleOneChanged:
+        print "Toggle One"
+        toggleOneLastState = GPIO.input(toggleOne)
+        os.system('node toggle.js 1')
+    elif toggleTwoChanged:
+        print "Toggle Two"
+        toggleTwoLastState = GPIO.input(toggleTwo)
+        os.system('node toggle.js 2')
+    elif toggleThreeChanged:
+        print "Toggle Three"
+        toggleThreeLastState = GPIO.input(toggleThree)
+        os.system('node toggle.js 3')
+    elif toggleFourChanged:
+        print "Toggle Four"
+        toggleFourLastState = GPIO.input(toggleFour)
+        os.system('node toggle.js 4')
+    elif toggleFiveChanged:
+        print "Toggle Five"
+        toggleFiveLastState = GPIO.input(toggleFive)
+        os.system('node toggle.js 5')
+    elif toggleSixChanged:
+        print "Toggle Six"
+        toggleSixLastState = GPIO.input(toggleSix)
+        os.system('node toggle.js 6')
+    elif toggleSevenChanged:
+        print "Toggle Seven"
+        toggleSevenLastState = GPIO.input(toggleSeven)
+        os.system('node toggle.js 7')
+
+    time.sleep(0.01)
 
 GPIO.cleanup()
