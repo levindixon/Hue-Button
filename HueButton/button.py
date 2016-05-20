@@ -47,7 +47,7 @@ while True:
     if toggleOneChanged:
         print "Toggle one flipped!"
         toggleOneLastState = GPIO.input(toggleOne)
-        oneOn = !oneOn
+        oneOn = not oneOn
         if oneOn
           print "Turning on light!"
           os.system('node toggle.js 4 on')
@@ -57,7 +57,7 @@ while True:
     elif toggleTwoChanged:
         print "Toggle two flipped!"
         toggleTwoLastState = GPIO.input(toggleTwo)
-        twoOn = !twoOn
+        twoOn = not twoOn
         if twoOn
           print "Turning on light!"
           os.system('node toggle.js 3 on')
@@ -67,7 +67,7 @@ while True:
     elif toggleThreeChanged:
         print "Toggle three flipped!"
         toggleThreeLastState = GPIO.input(toggleThree)
-        threeOn = !threeOn
+        threeOn = not threeOn
         if threeOn
           print "Turning on light!"
           os.system('node toggle.js 5 on')
@@ -77,7 +77,7 @@ while True:
     elif toggleFourChanged:
         print "Toggle four flipped!"
         toggleFourLastState = GPIO.input(toggleFour)
-        fourOn = !fourOn
+        fourOn = not fourOn
         if fourOn
           print "Turning on light!"
           os.system('node toggle.js 6 on')
@@ -87,7 +87,7 @@ while True:
     elif toggleFiveChanged:
         print "Toggle five flipped!"
         toggleFiveLastState = GPIO.input(toggleFive)
-        fiveOn = !fiveOn
+        fiveOn = not fiveOn
         if fiveOn
           print "Turning on light!"
           os.system('node toggle.js 7 on')
@@ -97,7 +97,7 @@ while True:
     elif toggleSixChanged:
         print "Toggle six flipped!"
         toggleSixLastState = GPIO.input(toggleSix)
-        sixOn = !sixOn
+        sixOn = not sixOn
         if sixOn
           print "Turning on light!"
           os.system('node toggle.js 2 on')
@@ -107,7 +107,7 @@ while True:
     elif toggleSevenChanged:
         print "Toggle seven flipped!"
         toggleSevenLastState = GPIO.input(toggleSeven)
-        sevenOn = !sevenOn
+        sevenOn = not sevenOn
         if sevenOn
           print "Turning on light!"
           os.system('node toggle.js 1 on')
