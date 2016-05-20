@@ -23,6 +23,18 @@ toggleFiveLastState = GPIO.input(toggleFive)
 toggleSixLastState = GPIO.input(toggleSix)
 toggleSevenLastState = GPIO.input(toggleSeven)
 
+os.system('node turnAllOff.js')
+os.system('node turnAllOn.js')
+os.system('node turnAllOff.js')
+
+oneOn = false
+twoOn = false
+threeOn = false
+fourOn = false
+fiveOn = false
+sixOn = false
+sevenOn = false
+
 while True:
     toggleOneChanged = GPIO.input(toggleOne) is not toggleOneLastState
     toggleTwoChanged = GPIO.input(toggleTwo) is not toggleTwoLastState
@@ -33,33 +45,75 @@ while True:
     toggleSevenChanged = GPIO.input(toggleSeven) is not toggleSevenLastState
 
     if toggleOneChanged:
-        print "Toggle One"
+        print "Toggle one flipped!"
         toggleOneLastState = GPIO.input(toggleOne)
-        os.system('node toggle.js 4')
+        oneOn = !oneOn
+        if oneOn
+          print "Turning on light!"
+          os.system('node toggle.js 4 on')
+        elif !oneOn
+          print "Turning off light!"
+          os.system('node toggle.js 4 off')
     elif toggleTwoChanged:
-        print "Toggle Two"
+        print "Toggle two flipped!"
         toggleTwoLastState = GPIO.input(toggleTwo)
-        os.system('node toggle.js 3')
+        twoOn = !twoOn
+        if twoOn
+          print "Turning on light!"
+          os.system('node toggle.js 3 on')
+        elif !twoOn
+          print "Turning off light!"
+          os.system('node toggle.js 3 off')
     elif toggleThreeChanged:
-        print "Toggle Three"
+        print "Toggle three flipped!"
         toggleThreeLastState = GPIO.input(toggleThree)
-        os.system('node toggle.js 5')
+        threeOn = !threeOn
+        if threeOn
+          print "Turning on light!"
+          os.system('node toggle.js 5 on')
+        elif !threeOn
+          print "Turning off light!"
+          os.system('node toggle.js 5 off')
     elif toggleFourChanged:
-        print "Toggle Four"
+        print "Toggle four flipped!"
         toggleFourLastState = GPIO.input(toggleFour)
-        os.system('node toggle.js 6')
+        fourOn = !fourOn
+        if fourOn
+          print "Turning on light!"
+          os.system('node toggle.js 6 on')
+        elif !fourOn
+          print "Turning off light!"
+          os.system('node toggle.js 6 off')
     elif toggleFiveChanged:
-        print "Toggle Five"
+        print "Toggle five flipped!"
         toggleFiveLastState = GPIO.input(toggleFive)
-        os.system('node toggle.js 7')
+        fiveOn = !fiveOn
+        if fiveOn
+          print "Turning on light!"
+          os.system('node toggle.js 7 on')
+        elif !fiveOn
+          print "Turning off light!"
+          os.system('node toggle.js 7 off')
     elif toggleSixChanged:
-        print "Toggle Six"
+        print "Toggle six flipped!"
         toggleSixLastState = GPIO.input(toggleSix)
-        os.system('node toggle.js 2')
+        sixOn = !sixOn
+        if sixOn
+          print "Turning on light!"
+          os.system('node toggle.js 2 on')
+        elif !sixOn
+          print "Turning off light!"
+          os.system('node toggle.js 2 off')
     elif toggleSevenChanged:
-        print "Toggle Seven"
+        print "Toggle seven flipped!"
         toggleSevenLastState = GPIO.input(toggleSeven)
-        os.system('node toggle.js 1')
+        sevenOn = !sevenOn
+        if sevenOn
+          print "Turning on light!"
+          os.system('node toggle.js 1 on')
+        elif !sevenOn
+          print "Turning off light!"
+          os.system('node toggle.js 1 off')
 
     time.sleep(0.01)
 

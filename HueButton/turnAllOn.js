@@ -1,10 +1,7 @@
-// To run:
-// $ node turnAllOn.js
-
 "use strict";
 
-var HOSTNAME = "192.168.0.101";
-var USERNAME = "82bf6d045f12856fa06cb642cbff0e";
+var HOSTNAME = "192.168.1.6";
+var USERNAME = "IR1YuGO6xjhdoZHiL7GrAxa2cukIWJrHGRyvQDaz";
 
 var Cylon = require("cylon");
 
@@ -19,21 +16,17 @@ Cylon.robot({
     bulb3: { driver: "hue-light", lightId: 3 },
     bulb4: { driver: "hue-light", lightId: 4 },
     bulb5: { driver: "hue-light", lightId: 5 },
-    bulb6: { driver: "hue-light", lightId: 6 },
-    bulb7: { driver: "hue-light", lightId: 7 }
+    bulb6: { driver: "hue-light", lightId: 8 },
+    bulb7: { driver: "hue-light", lightId: 9 }
   },
 
   work: function(my) {
     for (var d in my.devices) {
       my.devices[d].turnOn();
-      my.devices[d].brightness(75);
+      
+      if (my.devices[d].lightId === 4){
+        my.bulb4.rgb(255,255,255); 
+      }
     }
-    my.bulb1.rgb(255,0,0); //red
-    my.bulb2.rgb(255,128,0); //orange
-    my.bulb3.rgb(255,255,0); //yellow
-    my.bulb4.rgb(0,255,0); //green
-    my.bulb5.rgb(0,0,255); //blue
-    my.bulb6.rgb(191,0,255); //purple
-    my.bulb7.rgb(255,0,191); //pink
   }
 }).start();

@@ -1,10 +1,7 @@
-// To run:
-// $ node turnAllOff.js
-
 "use strict";
 
-var HOSTNAME = "192.168.0.101";
-var USERNAME = "82bf6d045f12856fa06cb642cbff0e";
+var HOSTNAME = "192.168.1.6";
+var USERNAME = "IR1YuGO6xjhdoZHiL7GrAxa2cukIWJrHGRyvQDaz";
 
 var Cylon = require("cylon");
 
@@ -19,8 +16,8 @@ Cylon.robot({
     bulb3: { driver: "hue-light", lightId: 3 },
     bulb4: { driver: "hue-light", lightId: 4 },
     bulb5: { driver: "hue-light", lightId: 5 },
-    bulb6: { driver: "hue-light", lightId: 6 },
-    bulb7: { driver: "hue-light", lightId: 7 }
+    bulb6: { driver: "hue-light", lightId: 8 },
+    bulb7: { driver: "hue-light", lightId: 9 }
   },
 
   work: function(my) {

@@ -23,11 +23,11 @@ Cylon.robot({
   },
 
   work: function(my) {
-    if(my.devices[bulbs[process.argv[2]-1]].isOn) {
+    if(process.argv[3] === 'off') {
         my.devices[bulbs[process.argv[2]-1]].turnOff();
     }
 
-    if(!my.devices[bulbs[process.argv[2]-1]].isOn) {
+    if(process.argv[3] === 'on') {
         my.devices[bulbs[process.argv[2]-1]].turnOn()
     }
   }
