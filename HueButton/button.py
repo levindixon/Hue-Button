@@ -27,13 +27,13 @@ os.system('node turnAllOff.js')
 os.system('node turnAllOn.js')
 os.system('node turnAllOff.js')
 
-oneOn = false
-twoOn = false
-threeOn = false
-fourOn = false
-fiveOn = false
-sixOn = false
-sevenOn = false
+oneOn = False
+twoOn = False
+threeOn = False
+fourOn = False
+fiveOn = False
+sixOn = False
+sevenOn = False
 
 while True:
     toggleOneChanged = GPIO.input(toggleOne) is not toggleOneLastState
